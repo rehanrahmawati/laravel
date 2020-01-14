@@ -80,5 +80,24 @@ Route::get('user/{nama}/{nilai?}', function ($nama,$nilai = 'nilai kamu kosong d
     return 'hai ' .$nama. ' nilai : ' .$nilai;
 });
 
+Route::get('contoh','BukuController@latihan');
+Route::get('profil','BukuController@latihan2');
+Route::get('profil2','BukuController@latihan3');
+Route::get('profil3','BukuController@latihan4');
+Route::get('biodata','BukuController@biodata');
+Route::get('menu/{mkn}','BukuController@parameter1');
+Route::get('menu1/{mkn?}','BukuController@parameter2');
+Route::get('pesan/{mkn?}','BukuController@parameter3');
+Route::get('pesan1/{mkn?}/{minum?}','BukuController@parameter4');
+Route::get('pesan2/{mkn?}/{minum?}/{harga?}','BukuController@parameter5');
+Route::get('get-buku','BukuController@index');
+Route::get('get-buku2','BukuController@show');
+Route::get('tabel','BukuController@buat_data');
+Route::get('delete-buku/{id}','BukuController@delete');
+Route::get('update-buku/{id}','BukuController@update');
+
+
+
+
 
 
