@@ -116,9 +116,9 @@ class BukuController extends Controller
         $buku->save();
         return $buku;
     }
-    public function update($id){
+    public function update($id,$judul){
         $buku = Buku::find($id);
-        $buku->judul ="vvvvvv";
+        $buku->judul = $judul; 
         $buku->jumlah_halaman=100;
         $buku->penerbit="maman";
         $buku->synopsis="halaman sinopsis";
@@ -130,6 +130,9 @@ class BukuController extends Controller
        $buku = Buku::find($id);
        $buku->delete();
        return $buku;
-
+    }
+    public function hitungbuku(){
+        $buku = Buku::count();
+        return $buku;
     }
 }

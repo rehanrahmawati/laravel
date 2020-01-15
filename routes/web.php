@@ -94,7 +94,15 @@ Route::get('get-buku','BukuController@index');
 Route::get('get-buku2','BukuController@show');
 Route::get('tabel','BukuController@buat_data');
 Route::get('delete-buku/{id}','BukuController@delete');
-Route::get('update-buku/{id}','BukuController@update');
+Route::get('update-buku/{id}/{judul}','BukuController@update');
+Route::get('hitung-buku','BukuController@hitungbuku');
+Route::get('get-siswa','SiswaController@index');
+Route::get('get-siswa2/{id}','SiswaController@show');
+Route::get('buat-siswa/{nama}/{nis}','SiswaController@create');
+Route::get('delete-siswa/{id}','SiswaController@delete');
+Route::get('update-siswa/{id}/{nama}/{nis}','SiswaController@update');
+Route::get('hitung-siswa','SiswaController@hitungsiswa');
+
 
 
 
