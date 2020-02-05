@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(IsiSeeder::class);
         $this->call(StrukturSeeder::class);
         $this->call(SiswaSeeder::class);
+        $this->call(GajiSeeder::class);
 
     }
 }

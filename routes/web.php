@@ -103,6 +103,22 @@ Route::get('delete-siswa/{id}','SiswaController@delete');
 Route::get('update-siswa/{id}/{nama}/{nis}','SiswaController@update');
 Route::get('hitung-siswa','SiswaController@hitungsiswa');
 
+// passing data
+Route::get('pass','PracticeController@pass');
+Route::get('pass1','PracticeController@pass1');
+Route::get('status/{a}','PracticeController@status');
+Route::get('status1/{a?}','PracticeController@status1');
+Route::get('buku','PracticeController@loop');
+
+// Book
+Route::get('book','BukuController@index');
+Route::get('book/{id}','BukuController@show');
+
+//gaji
+Route::get('penggajihan','GajiController@index');
+Route::get('penggajihan/{id}','GajiController@show');
+
+
 
 
 

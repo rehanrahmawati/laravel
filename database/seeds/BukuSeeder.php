@@ -21,6 +21,7 @@ class BukuSeeder extends Seeder
         $buku->status =1;
         $buku->save();
 
+        $buku = new Buku;
         $buku->judul = 'ayokkk laravel';
         $buku->jumlah_halaman = 100;
         $buku->penerbit = 'Gramedia Pustaka 2';
@@ -28,6 +29,7 @@ class BukuSeeder extends Seeder
         $buku->status =1;
         $buku->save();
 
+        $buku = new Buku;
         $buku->judul = 'Belajar PHP 3';
         $buku->jumlah_halaman = 100;
         $buku->penerbit = 'Gramedia Pustaka 3';
@@ -35,13 +37,15 @@ class BukuSeeder extends Seeder
         $buku->status =1;
         $buku->save();
 
+        $buku = new Buku;
         $buku->judul = 'Belajar PHP 4';
         $buku->jumlah_halaman = 100;
         $buku->penerbit = 'Gramedia Pustaka 4';
         $buku->synopsis = 'ini adalah synopsis 4.......';
         $buku->status =1;
         $buku->save();
-
+        
+        $buku = new Buku;
         $buku->judul = 'Belajar PHP 5';
         $buku->jumlah_halaman = 100;
         $buku->penerbit = 'Gramedia Pustaka 5';

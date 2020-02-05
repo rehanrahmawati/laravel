@@ -100,11 +100,11 @@ class BukuController extends Controller
     }
     public function index(){
         $buku = Buku::all();
-        return $buku;
+        return view('buku.index',compact('buku'));
     }
     public function show($id){
         $buku = Buku::find($id);
-        return $buku;
+        return view('buku.show',compact('buku'));
     }
     public function buat_data(){
         $buku = new Buku();
