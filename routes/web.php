@@ -118,9 +118,59 @@ Route::get('book/{id}','BukuController@show');
 Route::get('penggajihan','GajiController@index');
 Route::get('penggajihan/{id}','GajiController@show');
 
+//blade
+Route::get('/profil',function(){
+    return view('profil');
+});
+Route::get('/contact',function(){
+    return view('contact');
+});
+Route::get('/blog',function(){
+    return view('blog');
+});
 
+//Relasi
+use App\Mahasiswa;
+use App\Dosen;
+use App\Hobi;
 
+Route::get('relasi-1',function(){
+    #temukan mahasiswa dengan NIM 1015015072
+    $mahasiswa = Mahasiswa::where('nim','=','1015015072')->first();
 
+    #tampilkan nama wali mahsiswa
+    return $mahasiswa->wali->nama;
+});
+
+Route::get('relasi-2',function(){
+    $mahasiswa = Mahasiswa::where('nim','=','1015015072')->first();
+    return $mahasiswa->dosen->nama;
+});
+
+Route::get('relasi-3',function(){
+    $dosen = Dosen::where('nama','=','Abdul Musthafa')->first();
+    foreach ($dosen->mahasiswa as $temp)
+    echo '<li> Nama : ' . $temp->nama . 
+    '<strong>' . $temp->nim . '</strong></li>';
+});
+
+Route::get('relasi-4',function(){
+$novay = Mahasiswa::where('nama','=','Noviyanto Rachmadi')->first();
+foreach ($novay->hobi as $temp)
+echo '<li>' . $temp->hobi . '</li>';
+});
+
+Route::get('relasi-5', function(){
+$mandi_hujan = Hobi::where('hobi','=','Mandi hujan')->first();
+foreach ($mandi_hujan->mahasiswa as $temp)
+echo '<li> Nama : ' . $temp->nama . 
+'<strong>' . $temp->nim . '</strong></li>';
+});
+
+Route::get('eloquent',function(){
+    $data = Mahasiswa::with('wali','dosen','hobi')->get();
+    return view('eloquent',compact('data'));
+});
 
 
 
